@@ -1,6 +1,7 @@
 package com.es.elsdemo.config;
 
 import com.es.elsdemo.document.Candidate;
+import com.es.elsdemo.document.Job;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationRunner;
@@ -19,15 +20,18 @@ public class ElasticsearchIndexInitializer {
 	@ConditionalOnProperty(prefix = "app.elasticsearch", name = "create-index-on-startup", havingValue = "true", matchIfMissing = true)
 	ApplicationRunner createCandidateIndex(ElasticsearchOperations elasticsearchOperations) {
 		return args -> {
-			IndexOperations indexOperations = elasticsearchOperations.indexOps(Candidate.class);
-
-			if (indexOperations.exists()) {
-				log.info("Elasticsearch index '{}' already exists", indexOperations.getIndexCoordinates().getIndexName());
-				return;
-			}
-
-			indexOperations.createWithMapping();
-			log.info("Created Elasticsearch index '{}'", indexOperations.getIndexCoordinates().getIndexName());
+			createIndexIfMissing(elasticsearchOperations.indexOps(Candidate.class));
+			createIndexIfMissing(elasticsearchOperations.indexOps(Job.class));
 		};
+	}
+
+	private void createIndexIfMissing(IndexOperations indexOperations) {
+		if (indexOperations.exists()) {
+			log.info("Elasticsearch index '{}' already exists", indexOperations.getIndexCoordinates().getIndexName());
+			return;
+		}
+
+		indexOperations.createWithMapping();
+		log.info("Created Elasticsearch index '{}'", indexOperations.getIndexCoordinates().getIndexName());
 	}
 }

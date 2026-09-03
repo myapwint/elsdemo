@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "aboutCompany": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "companyDescription": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "aboutJob": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "jobDescription": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "howWeWork": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "whatWillYouBeWorkingOn": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "qualifications": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "niceToHave": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "additionalInformation": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "whatDoWeOffer": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    }
+  }
+}

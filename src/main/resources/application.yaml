@@ -1,6 +1,9 @@
 spring:
   application:
     name: elsdemo
+  graphql:
+    graphiql:
+      enabled: true
   elasticsearch:
     uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
     api-key: ${ELASTICSEARCH_API_KEY:}

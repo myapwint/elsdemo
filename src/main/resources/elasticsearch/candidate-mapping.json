@@ -1,8 +1,41 @@
 {
   "properties": {
+    "id": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
+    "email": {
+      "type": "keyword",
+      "normalizer": "lowercase_keyword_normalizer"
+    },
     "name": {
       "type": "keyword",
       "normalizer": "lowercase_keyword_normalizer"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "line1": {
+          "type": "keyword",
+          "normalizer": "lowercase_keyword_normalizer"
+        },
+        "line2": {
+          "type": "keyword",
+          "normalizer": "lowercase_keyword_normalizer"
+        },
+        "city": {
+          "type": "keyword",
+          "normalizer": "lowercase_keyword_normalizer"
+        },
+        "postalCode": {
+          "type": "keyword",
+          "normalizer": "lowercase_keyword_normalizer"
+        },
+        "country": {
+          "type": "keyword",
+          "normalizer": "lowercase_keyword_normalizer"
+        }
+      }
     }
   }
 }

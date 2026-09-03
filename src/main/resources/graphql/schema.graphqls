@@ -1,0 +1,23 @@
+type Query {
+  fetch(request: GraphQlRequest): GraphQlResponse
+}
+
+type Mutation {
+  save(request: GraphQlRequest): GraphQlResponse
+  login(request: GraphQlRequest): GraphQlResponse  # New entry point
+}
+
+input GraphQlRequest {
+  apiName: String
+  payload: String
+}
+
+type GraphQlResponse {
+  status: Status
+  data: String
+}
+
+type Status {
+  code: Int
+  message: String
+}

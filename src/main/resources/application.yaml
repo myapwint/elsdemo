@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: elsdemo
+  elasticsearch:
+    uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
+    api-key: ${ELASTICSEARCH_API_KEY:}
+    connection-timeout: ${ELASTICSEARCH_CONNECTION_TIMEOUT:5s}
+    socket-timeout: ${ELASTICSEARCH_SOCKET_TIMEOUT:30s}
+    socket-keep-alive: ${ELASTICSEARCH_SOCKET_KEEP_ALIVE:true}
+    restclient:
+      sniffer:
+        enabled: ${ELASTICSEARCH_SNIFFER_ENABLED:false}
